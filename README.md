@@ -17,8 +17,8 @@ Create a basic Node.js/Express application. You can use a simple "Hello World" e
 ### 2. Write Dockerfile for the Application
 Create a Dockerfile to containerize the Node.js application. This file should include all the necessary dependencies and configuration for running the application in a Docker container.
 ### 3. Write Terraform Scripts for GKE Cluster
-`providers.tf` In this project will use Google and Kubernetes
-`main.tf` for creating GKE Cluster
-`k8s.tf` Use for deployment on Kubernetes
+- `providers.tf` In this project will use Google and Kubernetes
+- `main.tf` for creating GKE Cluster
+- `k8s.tf` Use for deployment on Kubernetes
 ### 4. Add Secrets to GitHub Repo and Write GH Actions Workflow
 Add sensitive information, such as API keys or GCP credentials, as secrets in the GitHub repository. Write a GitHub Actions workflow that triggers on changes to the repository, builds the Docker image, and deploys the application to the GKE cluster.
