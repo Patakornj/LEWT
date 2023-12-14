@@ -8,7 +8,6 @@ env:
   GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   TF_STATE_BUCKET: ${{ secrets.GCP_TF_STATE_BUCKET }}
   SERVICE_ACCOUNT: ${{ secrets.TF_TEST_SERVICE_ACCOUNT }}
-  WORK_LOAD_IDENTITY: ${{ secrets.WORK_LOAD_IDENTITY }}
 
 jobs:
   deploy:
@@ -25,7 +24,7 @@ jobs:
         uses: 'google-github-actions/auth@v1'
         with:
           token_format: 'access_token'
-          workload_identity_provider: ${{ env.WORK_LOAD_IDENTITY }}
+          workload_identity_provider: 'projects/90788727098/locations/global/workloadIdentityPools/k8s-pool/providers/k8s-provider'
           service_account: ${{ env.SERVICE_ACCOUNT }}
       - uses: 'google-github-actions/setup-gcloud@v1'
       - name: Docker auth
